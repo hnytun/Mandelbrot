@@ -1,0 +1,8 @@
+If i could just find out how to vectorize the numpy array to store the tuples of rgb and then add the mandelbrot to all
+the coordinates at the same time with numpy, instead of the double nested loop, the mandelbrot_2.py would have been significantly faster,
+since numpy isnt using the python interpreter to run, which my double nested loop is.
+but since this did not work out, i have no way to prove with a timer that this infact is the case. I have tried to implement the numpy
+tuple list in my code, but it is commented out because it didnt want to take in tuples as elements in the 2d array when i tried to make the
+array with numpy. Actually, my mandelbrot_2 is slower than mandelbrot_1, which is ironic.
+
+ 
