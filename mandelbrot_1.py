@@ -13,7 +13,6 @@ def compute_mandelbrot(c):
     #we iterate a given amount(threshold), and check if our c is in the mandelbrot
     for i in range(0,1000):
         z = z*z+c
-
         #if our absolute value of z, which is run a given amount of times over itself, is
         #ever over 2, we know that it has escaped our escape value of 2, and is not in the mandelbrot set
         #which is only when z can be added many times together for the value of c(complex coordinate)
@@ -25,12 +24,9 @@ def compute_mandelbrot(c):
     #we fix the coloring later
     return None;
 
-
 #function that doesnt use numpy for the solving
 def makeMandelbrotImageTraditional(minX,maxX,minY,maxY,centerX,centerY,colorStyle,fileName):
-
     #add 1000 colors to our grid depending on what scale we are following (colorstyle)
-
     if(colorStyle == "random"):
         colorCollection = np.random.randint(255,size=(1000,3))
     elif(colorStyle == "red"):#alternative color1 red
@@ -73,19 +69,8 @@ def makeMandelbrotImageTraditional(minX,maxX,minY,maxY,centerX,centerY,colorStyl
         #if the color is not in our list yet we break and end up here
             colorCollection[i] = (r,g,b)
 
-    #since i am using the image module,i am having a hard time finding out how to reposition my rectangle on the mandelbrot,
-    #since it appears that a lot of the x and y-values that make colors(not in mandelbrot-set) are decimals,
-    #and i dont understand how i am going to apply these decimal-ranges to my coordinates,since my coordinates mostly
-    #are positive from 0 and so on so i just
-    #multiply with a decimal to scale the integers from for example min 0 to max 500 before i add it to the function
-    #which finds out the iterations below in the mandelbrot. SO now, it appears
-    #that the minX and maxY just decides the resolution of my image, which would work, if you think about it, to zoom in and explore
-    #the pattern.
-
-
     #rectangle to be filled, change from 0 to 1000 in min and max to get full picture. I dont really understand how to do this task
     #in another way
-
     scaleFix=1.0/((maxX-minX)/3)
 
     #uncomment bottom center initialization to make center 0, but this makes the pattern more boring
@@ -94,7 +79,6 @@ def makeMandelbrotImageTraditional(minX,maxX,minY,maxY,centerX,centerY,colorStyl
 
     image = Image.new("RGB",(maxX-minX,maxY-minY))
     drawer = ImageDraw.Draw(image)
-
     #colorize our rectangle
     for x in range (minX,maxX):
         for y in range (minY,maxY):
@@ -106,15 +90,11 @@ def makeMandelbrotImageTraditional(minX,maxX,minY,maxY,centerX,centerY,colorStyl
 
     image.save(fileName)
 
-
 #make mandelbrot with minX=0,maxX=1000,minY=0;maxY=1000, and filename
-
 #startTime = time.time();
 makeMandelbrotImageTraditional(0,200,0,200,"result1.png")
 #endTime = time.time();
-
 #total = endTime-startTime;
-
 #print(total);
 
 
