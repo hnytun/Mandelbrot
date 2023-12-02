@@ -81,9 +81,7 @@ def makeMandelbrotImageTraditional(minX,maxX,minY,maxY,centerX,centerY,colorStyl
     #which finds out the iterations below in the mandelbrot. SO now, it appears
     #that the minX and maxY just decides the resolution of my image, which would work, if you think about it, to zoom in and explore
     #the pattern.
-    #BUT ON THE BRIGHT SIDE: Although this might be a bad solution, it certainly takes a lot of computation, and it appears
-    #that you(the instructors), made this task to focus on the computation of mandelbrot, and not the image, in this case, my solution
-    #is adequate.
+
 
     #rectangle to be filled, change from 0 to 1000 in min and max to get full picture. I dont really understand how to do this task
     #in another way
